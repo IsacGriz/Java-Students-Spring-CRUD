@@ -62,11 +62,7 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     @Transactional
     public int deleteAll() {
-        int deletedUsers = 0;
-
-        deletedUsers = em.createQuery("delete from Student")
+        return em.createQuery("delete from Student")
                 .executeUpdate();
-
-        return deletedUsers;
     }
 }
